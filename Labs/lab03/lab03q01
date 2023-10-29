@@ -1,0 +1,4 @@
+# !/bin/bash
+
+ls --file-type | grep "^[A-Z][A-Z]*/\{0,1\}$"
+

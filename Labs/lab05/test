@@ -1,0 +1,40 @@
+#!/bin/bash
+
+word=$( wc -w $1 | cut -d ' ' -f1 )
+word2=$( wc -w $2 | cut -d ' ' -f1 )
+lowest=9999999999
+highest=0
+lw=""
+hi=""
+
+if [ $# -lt 2 ]
+then
+	echo "$0: 2 or more commands are required"
+	exit 1
+fi
+
+x=1
+y=$#
+
+for var in "$@"
+do
+	if [ -f $var -a -r $var ]
+	then
+		w_count=$( wc -w $var | cut -d ' ' -f1 )
+		if [ $w_count -gt $highest ]
+		then
+			highest=$w_count
+			hi=$var
+		fi
+
+		if [ $w_count -lt $lowest ]	
+		then
+			lowest=$w_count
+			lw=$var
+		fi
+	fi
+done
+
+echo "$hi has the highest word count ($highest)"
+echo "$lw has the lowest word count ($lowest)"
+

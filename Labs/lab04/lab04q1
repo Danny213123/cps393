@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -gt 3 ] || [ $# -lt 1 ]
+then
+	echo "lab04q1: Wrong number of command line arguments"
+else
+	for (( x=1; x <=$1; x++))
+	do
+		echo $x
+	done
+fi

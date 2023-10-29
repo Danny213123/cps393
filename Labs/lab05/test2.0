@@ -1,0 +1,24 @@
+#!/bin/bash
+
+word=$( wc -w $1 | cut -d ' ' -f1 )
+word2=$( wc -w $2 | cut -d ' ' -f1 )
+
+
+if [ $# -lt 2 ]
+then
+	echo "$0: 2 or more commands are required"
+	exit 1
+fi
+
+x=1
+y=$#
+
+while [ $x -le $y ]
+do
+	wordz=$( wc - w $x | cut -d ' ' -f1 )
+	echo $wordz
+	x=$(expr $x '+' 1 )
+done
+exit 1
+
+

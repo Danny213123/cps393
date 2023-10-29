@@ -1,0 +1,67 @@
+CPS393 LAB 02: 
+   grep, globs, shell programs
+
+1. What is an ls command that will list all entries (files or directories) that 
+   start with an 'a' or 'b' or 'c' or 'd'. Create some files and/or directories
+   to test your ls command.
+
+2. What is an ls command that will list all entries (files or directories) that 
+   end in 't' or 'a'.  Create some files and/or directories to test your ls 
+   command.
+
+
+3. Move into your home directory and verify you're there.
+
+   From within your home directory, use the ls command to get a long listing for 
+   u1.txt and u2.txt from the directory /usr/courses/cps393/dwoit/courseNotes/
+   Specify u1.txt using an ABSOLUTE path name. 
+   Specify u2.txt using a  RELATIVE path name. 
+   Use the mouse to copy and paste the actual ls command you used into file lab02q03:
+      -"select" whole ls command with the mouse so it's hilighted (which is "copy" in putty). 
+      -vim lab02q3
+      -open a new line: o
+      -right-click mouse (which is "paste" in putty)
+      -press escape a couple of times
+      -:wq to save and exit
+
+   Use vim to edit lab02q03 again and add the following at the top to turn it into a 
+   shell program:
+#!/bin/bash
+  
+   Run your program and make sure it works.
+
+
+4. Use output redirection (the ">") to capture the OUTPUT from your ls command from
+   question 3, and put it into file lab02q04
+
+5. Copy the whole directory  /usr/courses/cps393/dwoit/labs/lab02/testfiles into your
+   own filespace UNDER your lab02 dir. 
+
+
+6.  Write a shell program named lab02q06 as follows.
+    The shell program uses glob constructs and ls to list all entries that have 
+    2 or more dots "." in their name. 
+     If you run your program from within your testfiles directory, it should list 
+     these files (in any order):
+     a.b.c  a.b.c.d  a.bbb.c
+
+7.  Write a shell program named lab02q07 as follows.
+    The shell program uses glob constructs to list all files ending in the string ".txt"
+    If you run your program from within your testfiles directory, it should list files:
+    u894g.txt  xyz.txt
+   
+8.  Write a shell program named lab02q08 as follows.
+    The shell program uses grep to find all lines of all files that contain the string 
+    "winter" with letters in any case (e.g., winter, or wiNTer, etc).
+    If you run your program from within your testfiles directory, it should show: 
+    abcdtxt: lfj; ak winter alksdjf 
+    try1.aaa:The Wintertime lab
+    u894g.txt: lfj; ak winter alksdjf 
+    xyz:The WINTER lab
+
+9.  Copy your lab02q08 to file lab02q09 and change lab02q09 so that instead of
+    searching for the string "winter" in any case, it searches for a string
+    given on the command line (in any case). For example, running the following
+    should produce the same output as q8 above:
+    ./lab02q9 winTER
+

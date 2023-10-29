@@ -1,0 +1,10 @@
+#!/bin/bash
+
+x=$1
+y=$2
+
+words=$( wc -w $1 )
+words2=$( wc - w $2 )
+
+
+echo $words
